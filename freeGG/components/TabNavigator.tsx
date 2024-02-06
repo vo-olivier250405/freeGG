@@ -3,7 +3,7 @@ import { faHome, faGear, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Category } from "./Category";
-import { Home } from "./Home";
+import { HomeStack } from "./HomeStack";
 import { SettingsScreen } from "./SettingsScreen";
 
 const Tab = createBottomTabNavigator();
@@ -30,7 +30,7 @@ export const TabNavigator = () => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Categories" component={Category} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>

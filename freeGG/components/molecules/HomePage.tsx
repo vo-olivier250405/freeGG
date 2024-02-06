@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import {
   View,
-  Text,
-  Pressable,
-  StyleSheet,
   ScrollView,
-  Dimensions,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
 } from "react-native";
-import { Game } from "../types";
-import { fetchSortedData, get10Games } from "../utils";
-import { Image } from "react-native";
-import { Card } from "./atoms";
+import { Game } from "../../types";
+import { fetchSortedData, get10Games } from "../../utils";
+import { Card } from "../atoms";
 
-export const Home = () => {
+export const Home = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
   const [homeGames, setHomeGames] = useState<Game[]>([]);
 
@@ -25,11 +23,22 @@ export const Home = () => {
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Ceci est la page d'accueil</Text>
+      <Text>FREE GG</Text>
       <ScrollView horizontal={true} style={styles.scrollBar}>
         {homeGames &&
           homeGames.map((game: Game, index: number) => {
-            return <Card game={game} key={index} />;
+            return (
+              <TouchableOpacity
+                key={index}
+                onPress={() => navigation.navigate("Details", { game: game })}
+              >
+                <View>
+                  <Text>
+                    <Card game={game} key={index} />
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
           })}
       </ScrollView>
     </View>
