@@ -23,13 +23,13 @@ export const fetchGameData = async () => {
 };
 
 export const fetchGameDataByPlatform = async (platform: string) => {
-  return await api.get("/games?platform=" + platform).then((response) => {
+  return await api.get(`/game?platform=${platform}`).then((response) => {
     return response.data;
   });
 };
 
 export const fetchDataFromSpecificGame = async (id: number) => {
-  return await api.get("/game?id=" + id).then((response) => {
+  return await api.get(`/game?id=${id}`).then((response) => {
     return response.data;
   });
 };
@@ -45,7 +45,7 @@ export const get10Games = (allGames: Game[]): Game[] => {
 export const fetchSortedData = async (
   filter: "alphabetical" | "relevance" | "popularity" | "release-date"
 ) => {
-  return await api.get("/games?sort-by=" + filter).then((response) => {
+  return await api.get(`/games?sort-by=${filter}`).then((response) => {
     return response.data;
   });
 };
