@@ -6,7 +6,7 @@ import {
   Text,
   StyleSheet,
 } from "react-native";
-import { Game } from "../../types";
+import { Game } from "../../interfaces";
 import { fetchSortedData, get10Games } from "../../utils";
 import { Card } from "../atoms";
 

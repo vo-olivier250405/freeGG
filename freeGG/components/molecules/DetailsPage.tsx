@@ -1,12 +1,13 @@
-import { View, Text } from "react-native";
-import { DetailedGame, Game } from "../../types";
+import { View, Text, ScrollView } from "react-native";
+import { DetailedGame, Game } from "../../interfaces";
 import { useEffect, useState } from "react";
 import { fetchDataFromSpecificGame } from "../../utils";
+import { DetailedCard } from "../atoms/DetailedCard";
 
-type DetailsPageProps = {
+interface DetailsPageProps {
   route: any;
   navigation: any;
-};
+}
 
 const DetailsPage = (props: DetailsPageProps) => {
   const { id }: { id: number } = props.route.params;
@@ -18,13 +19,12 @@ const DetailsPage = (props: DetailsPageProps) => {
       // console.log(detailData);
       console.log(data);
       console.log("azerty");
-      
 
       return setDetailData(data);
     });
   }, []);
 
-  return <View>{detailData && <Text>{detailData.description}</Text>}</View>;
+  return <View>{detailData && <DetailedCard game={detailData} />}</View>;
 };
 
 export default DetailsPage;

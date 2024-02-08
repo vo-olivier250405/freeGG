@@ -1,5 +1,5 @@
 import { api } from "../services/api";
-import { Game } from "../types";
+import { Game } from "../interfaces";
 
 export const getRandint = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min) + min);

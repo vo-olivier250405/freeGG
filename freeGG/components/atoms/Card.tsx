@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import { CardProps } from "../../types";
+import { CardProps } from "../../interfaces";
 import { Dimensions, Image, StyleSheet } from "react-native";
 
 export const Card = (props: CardProps) => {

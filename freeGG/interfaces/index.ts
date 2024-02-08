@@ -1,4 +1,4 @@
-export type Game = {
+export interface Game {
   id: number;
   title: string;
   thumbnail: string;
@@ -10,9 +10,9 @@ export type Game = {
   developer: string;
   release_date: string;
   freetogame_profile_url: string;
-};
+}
 
-export type DetailedGame = {
+export interface DetailedGame {
   id: number;
   title: string;
   thumbnail: string;
@@ -34,9 +34,9 @@ export type DetailedGame = {
     storage: string;
   } | null;
   screenshots: { id: number; image: string }[];
-};
+}
 
-export type CardProps = {
+export interface CardProps {
   game: Game;
   key: number;
-};
+}
