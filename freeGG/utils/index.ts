@@ -29,7 +29,7 @@ export const fetchGameDataByPlatform = async (platform: string) => {
 };
 
 export const fetchDataFromSpecificGame = async (id: number) => {
-  return await api.get("/games?platform=" + String(id)).then((response) => {
+  return await api.get("/game?id=" + id).then((response) => {
     return response.data;
   });
 };

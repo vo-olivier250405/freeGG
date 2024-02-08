@@ -10,7 +10,7 @@ import { Game } from "../../types";
 import { fetchSortedData, get10Games } from "../../utils";
 import { Card } from "../atoms";
 
-export const Home = ({ navigation }: { navigation: any }) => {
+export const HomePage = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
   const [homeGames, setHomeGames] = useState<Game[]>([]);
 
@@ -30,13 +30,11 @@ export const Home = ({ navigation }: { navigation: any }) => {
             return (
               <TouchableOpacity
                 key={index}
-                onPress={() => navigation.navigate("Details", { game: game })}
+                onPress={() => navigation.navigate("Details", { id: game.id })}
               >
-                <View>
-                  <Text>
-                    <Card game={game} key={index} />
-                  </Text>
-                </View>
+                <Text>
+                  <Card game={game} key={index} />
+                </Text>
               </TouchableOpacity>
             );
           })}

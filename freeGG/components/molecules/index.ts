@@ -1,4 +1,4 @@
 import DetailsPage from "./DetailsPage";
-import { Home } from "./HomePage";
+import { HomePage } from "./HomePage";
 
-export { DetailsPage, Home };
+export { DetailsPage, HomePage };

@@ -1,5 +1,7 @@
 import { View, Text } from "react-native";
-import { Game } from "../../types";
+import { DetailedGame, Game } from "../../types";
+import { useEffect, useState } from "react";
+import { fetchDataFromSpecificGame } from "../../utils";
 
 type DetailsPageProps = {
   route: any;
@@ -7,12 +9,22 @@ type DetailsPageProps = {
 };
 
 const DetailsPage = (props: DetailsPageProps) => {
-  const { game }: { game: Game } = props.route.params;
-  return (
-    <View>
-      <Text>{game.thumbnail}</Text>
-    </View>
-  );
+  const { id }: { id: number } = props.route.params;
+
+  const [detailData, setDetailData] = useState<DetailedGame>();
+
+  useEffect(() => {
+    fetchDataFromSpecificGame(id).then((data) => {
+      // console.log(detailData);
+      console.log(data);
+      console.log("azerty");
+      
+
+      return setDetailData(data);
+    });
+  }, []);
+
+  return <View>{detailData && <Text>{detailData.description}</Text>}</View>;
 };
 
 export default DetailsPage;

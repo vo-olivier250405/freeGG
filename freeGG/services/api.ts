@@ -8,18 +8,18 @@ export const api = axios.create({
   },
 });
 
-api.interceptors.request.use((request) => {
-  console.log("Starting Request", request);
-  return request;
-});
+// api.interceptors.request.use((request) => {
+//   console.log("Starting Request", request);
+//   return request;
+// });
 
-api.interceptors.response.use(
-  (response) => {
-    console.log("Response:", response.data);
-    return response;
-  },
-  (error) => {
-    console.error("Error Response:", error);
-    return Promise.reject(error);
-  }
-);
+// api.interceptors.response.use(
+//   (response) => {
+//     console.log("Response:", response.data);
+//     return response;
+//   },
+//   (error) => {
+//     console.error("Error Response:", error);
+//     return Promise.reject(error);
+//   }
+// );
