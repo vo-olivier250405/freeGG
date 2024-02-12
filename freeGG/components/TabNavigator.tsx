@@ -2,7 +2,7 @@ import React from "react";
 import { faHome, faGear, faGamepad } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Category } from "./Category";
+import { CategoryStack } from "./CategoryStack";
 import { HomeStack } from "./HomeStack";
 import { SettingsScreen } from "./SettingsScreen";
 
@@ -31,7 +31,7 @@ export const TabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Categories" component={Category} />
+      <Tab.Screen name="Categories" component={CategoryStack} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );

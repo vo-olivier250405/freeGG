@@ -1,5 +1,5 @@
-import { View, Text, ScrollView } from "react-native";
-import { DetailedGame, Game } from "../../interfaces";
+import { View } from "react-native";
+import { DetailedGame } from "../../interfaces";
 import { useEffect, useState } from "react";
 import { fetchDataFromSpecificGame } from "../../utils";
 import { DetailedCard } from "../atoms/DetailedCard";
@@ -16,10 +16,6 @@ const DetailsPage = (props: DetailsPageProps) => {
 
   useEffect(() => {
     fetchDataFromSpecificGame(id).then((data) => {
-      // console.log(detailData);
-      console.log(data);
-      console.log("azerty");
-
       return setDetailData(data);
     });
   }, []);

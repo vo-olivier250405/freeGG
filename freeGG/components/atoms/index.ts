@@ -1,2 +1,4 @@
 import { Card } from "./Card";
-export { Card };
+import { DetailedCard } from "./DetailedCard";
+import { UrlButton } from "./UrlButton";
+export { Card, UrlButton, DetailedCard };
