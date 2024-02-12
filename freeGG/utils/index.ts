@@ -1,5 +1,6 @@
 import { api } from "../services/api";
 import { Game } from "../interfaces";
+import { faComputer, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 export const getRandint = (min: number, max: number): number => {
   return Math.floor(Math.random() * (max - min) + min);

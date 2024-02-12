@@ -9,6 +9,7 @@ import {
 import { DetailedGame } from "../../interfaces";
 import { UrlButton } from "./UrlButton";
 import { useState } from "react";
+import { IconPlatform } from "./IconPlatform";
 
 interface DetailedCardProps {
   game: DetailedGame;
@@ -29,19 +30,24 @@ export const DetailedCard = (props: DetailedCardProps) => {
         <Text style={{ color: "#f36e6e", fontStyle: "italic" }}>
           {props.game.developer}
         </Text>
+        <IconPlatform platform={props.game.platform} />
       </View>
 
       {!detailVisible ? (
-        <Text onPress={() => setDetailVisible(true)}>
-          {props.game.short_description + " ..."}
+        <Text style={styles.description} onPress={() => setDetailVisible(true)}>
+          {props.game.short_description + ".. + Read more"}
         </Text>
       ) : (
-        <Text onPress={() => setDetailVisible(false)}>
+        <Text
+          style={styles.description}
+          onPress={() => setDetailVisible(false)}
+        >
           {props.game.description}
         </Text>
       )}
-      <Text>Platform: {props.game.platform}</Text>
+
       <UrlButton url={props.game.game_url}>Go to website</UrlButton>
+
       <ScrollView horizontal={true}>
         {props.game.screenshots.map((link: { id: number; image: string }) => {
           return (
@@ -64,6 +70,8 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     margin: 10,
     marginTop: 10,
+    borderColor: "#b23f3f",
+    borderWidth: 10,
   },
   header: {
     justifyContent: "center",
@@ -75,5 +83,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#410303",
     color: "#f36e6e",
     height: Dimensions.get("window").height,
+  },
+  description: {
+    color: "white",
+    fontStyle: "italic",
+    backgroundColor: "#b23f3f",
+    padding: 10,
+    borderRadius: 10,
+    margin: 10,
   },
 });
