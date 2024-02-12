@@ -15,7 +15,7 @@ interface DetailedCardProps {
 
 export const DetailedCard = (props: DetailedCardProps) => {
   return (
-    <View>
+    <ScrollView style={{ margin: 5 }}>
       <View style={styles.container}>
         <Text>{props.game.title}</Text>
         <Image
@@ -35,20 +35,22 @@ export const DetailedCard = (props: DetailedCardProps) => {
             <Image
               key={link.id}
               source={{ uri: link.image }}
-              resizeMode="contain"
+              style={styles.img}
             />
           );
         })}
       </ScrollView>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   img: {
     width: Dimensions.get("window").width,
-    height: 300,
+    height: Dimensions.get("window").height / 4,
     borderRadius: 30,
+    margin: 10,
+    marginTop: 10,
   },
   container: {
     justifyContent: "center",
