@@ -22,7 +22,8 @@ export const UrlButton = (props: OpenURLButtonProps) => {
       onPress={handlePress}
       style={{
         padding: 15,
-        backgroundColor: "red",
+        margin: 15,
+        backgroundColor: "#f36e6e",
         width: props.children.length * 8,
         borderRadius: 10,
       }}
