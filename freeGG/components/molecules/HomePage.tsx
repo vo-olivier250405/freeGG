@@ -22,8 +22,8 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
   }, []);
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>FREE GG</Text>
+    <View style={styles.container}>
+      <Text style={styles.textStyle}>FREE GG</Text>
       <ScrollView horizontal={true} style={styles.scrollBar}>
         {homeGames &&
           homeGames.map((game: Game, index: number) => {
@@ -44,6 +44,12 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#410303",
+  },
   buttons: {
     padding: 5,
     borderRadius: 5,
@@ -51,5 +57,10 @@ const styles = StyleSheet.create({
   },
   scrollBar: {
     flexDirection: "row",
+  },
+  textStyle: {
+    fontSize: 50,
+    padding: 30,
+    color: "#f36e6e",
   },
 });

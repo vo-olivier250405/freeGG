@@ -12,22 +12,32 @@ export const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => {
           let iconName: any;
 
           if (route.name === "Home") {
-            iconName = focused ? faHome : faHome;
+            iconName = faHome;
           } else if (route.name === "Settings") {
-            iconName = focused ? faGear : faGear;
+            iconName = faGear;
           } else {
-            iconName = focused ? faGamepad : faGamepad;
+            iconName = faGamepad;
           }
 
           // You can return any component that you like here!
           return <FontAwesomeIcon icon={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: "#f36e6e",
+        tabBarInactiveTintColor: "white",
+        tabBarStyle: {
+          borderColor: "#610101",
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
+          position: "absolute",
+          backgroundColor: "#610101",
+          height: 60,
+          shadowColor: "#f36e6e",
+        },
       })}
     >
       <Tab.Screen name="Home" component={HomeStack} />

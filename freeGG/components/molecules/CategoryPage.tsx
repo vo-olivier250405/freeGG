@@ -1,9 +1,9 @@
-import { TouchableOpacity, Text, ScrollView } from "react-native";
+import { TouchableOpacity, Text, ScrollView, StyleSheet } from "react-native";
 import { categories } from "../../utils";
 
 export const CategoryPage = ({ navigation }: { navigation: any }) => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       {categories &&
         categories.map((category: string, index: number) => {
           return (
@@ -15,17 +15,24 @@ export const CategoryPage = ({ navigation }: { navigation: any }) => {
                   category: category,
                 });
               }}
-              style={{
-                padding: 10,
-                margin: 10,
-                backgroundColor: "grey",
-                borderRadius: 10,
-              }}
+              style={styles.textStyle}
             >
-              <Text>{category.toUpperCase()}</Text>
+              <Text style={{ color: "white" }}>{category.toUpperCase()}</Text>
             </TouchableOpacity>
           );
         })}
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#410303",
+  },
+  textStyle: {
+    padding: 10,
+    margin: 10,
+    backgroundColor: "#f36e6e",
+    borderRadius: 10,
+  },
+});
