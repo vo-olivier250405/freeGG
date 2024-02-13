@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { CategoryStack } from "./CategoryStack";
 import { HomeStack } from "./HomeStack";
-import { SettingsScreen } from "./SettingsScreen";
+import { SettingsStack } from "./SettingsStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +41,7 @@ export const TabNavigator = () => {
     >
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Categories" component={CategoryStack} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="Settings" component={SettingsStack} />
     </Tab.Navigator>
   );
 };

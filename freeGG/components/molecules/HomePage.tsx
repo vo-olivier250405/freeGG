@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { Game } from "../../interfaces";
 import { fetchSortedData, get10Games } from "../../utils";
-import { Card } from "../atoms";
 import { Carousel } from "../atoms/Carousel";
 
 export const HomePage = ({ navigation }: { navigation: any }) => {

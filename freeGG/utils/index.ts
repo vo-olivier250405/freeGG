@@ -31,8 +31,6 @@ export const fetchGameDataByPlatform = async (platform: string) => {
 
 export const fetchGamesByCategory = async (category: string) => {
   return await api.get(`/games?category=${category}`).then((response) => {
-    console.log(response, "here");
-
     return response.data;
   });
 };

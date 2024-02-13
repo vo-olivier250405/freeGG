@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
-import { FlatList, TouchableOpacity, Text, View } from "react-native";
+import { FlatList, TouchableOpacity, Text } from "react-native";
 import { CarouselProps } from "../../interfaces";
 import { Card } from ".";
 
