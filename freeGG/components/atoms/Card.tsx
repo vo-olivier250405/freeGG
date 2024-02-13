@@ -30,15 +30,17 @@ export const Card = (props: CardProps) => {
 const styles = StyleSheet.create({
   container: {
     width: Dimensions.get("window").width,
+    margin: 10,
     justifyContent: "center",
     alignItems: "center",
   },
   imageStyle: {
-    width: Dimensions.get("window").width / 2,
+    width: Dimensions.get("window").width / 1.2,
     height: 200,
     borderRadius: 20,
   },
   cardStyle: {
+    width: Dimensions.get("window").width,
     margin: 20,
     padding: 20,
     backgroundColor: "#b23f3f",
