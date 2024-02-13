@@ -41,3 +41,8 @@ export interface CardProps {
   key: number;
   isMiniCard: boolean;
 }
+
+export interface CarouselProps {
+  allGames: Game[];
+  navigation: any;
+}

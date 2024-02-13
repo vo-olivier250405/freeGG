@@ -9,6 +9,7 @@ import {
 import { Game } from "../../interfaces";
 import { fetchSortedData, get10Games } from "../../utils";
 import { Card } from "../atoms";
+import { Carousel } from "../atoms/Carousel";
 
 export const HomePage = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
@@ -24,21 +25,7 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>FREE GG</Text>
-      <ScrollView horizontal={true} style={styles.scrollBar}>
-        {homeGames &&
-          homeGames.map((game: Game, index: number) => {
-            return (
-              <TouchableOpacity
-                key={index}
-                onPress={() => navigation.navigate("Details", { id: game.id })}
-              >
-                <Text>
-                  <Card game={game} key={index} isMiniCard={false} />
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-      </ScrollView>
+      {homeGames && <Carousel allGames={homeGames} navigation={navigation} />}
     </View>
   );
 };

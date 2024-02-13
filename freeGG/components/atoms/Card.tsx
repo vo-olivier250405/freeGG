@@ -4,7 +4,7 @@ import { Dimensions, Image, StyleSheet } from "react-native";
 
 export const Card = (props: CardProps) => {
   return (
-    <View>
+    <View style={props.isMiniCard ? null : styles.container}>
       {props.game && (
         <View
           key={props.game.id}
@@ -28,6 +28,11 @@ export const Card = (props: CardProps) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    width: Dimensions.get("window").width,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   imageStyle: {
     width: Dimensions.get("window").width / 2,
     height: 200,

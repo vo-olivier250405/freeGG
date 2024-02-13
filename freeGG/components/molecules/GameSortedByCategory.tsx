@@ -71,10 +71,10 @@ const styles = StyleSheet.create({
   columnContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-between", // Vous pouvez ajuster cela selon vos préférences
+    justifyContent: "space-between",
   },
   card: {
-    width: "48%", // Pour assurer qu'il y a un espace entre les cartes
+    width: "48%",
     marginVertical: 10,
   },
 });
