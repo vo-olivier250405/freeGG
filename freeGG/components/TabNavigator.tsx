@@ -35,7 +35,6 @@ export const TabNavigator = () => {
           borderTopRightRadius: 20,
           position: "absolute",
           backgroundColor: "#610101",
-          height: 60,
           shadowColor: "#f36e6e",
         },
       })}

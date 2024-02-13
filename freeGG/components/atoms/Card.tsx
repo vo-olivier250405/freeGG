@@ -6,15 +6,20 @@ export const Card = (props: CardProps) => {
   return (
     <View>
       {props.game && (
-        <View key={props.game.id} style={styles.cardStyle}>
+        <View
+          key={props.game.id}
+          style={props.isMiniCard ? styles.miniCardStyle : styles.cardStyle}
+        >
           <Image
             key={props.game.id}
             source={{ uri: props.game.thumbnail }}
-            style={styles.imageStyle}
+            style={
+              props.isMiniCard ? styles.miniCardStyleImg : styles.imageStyle
+            }
             // resizeMode="contain"
           />
           <Text style={{ color: "white", padding: 10 }}>
-            {props.game.title + " " + props.game.genre}
+            {props.game.title}
           </Text>
         </View>
       )}
@@ -31,6 +36,21 @@ const styles = StyleSheet.create({
   cardStyle: {
     margin: 20,
     padding: 20,
+    backgroundColor: "#b23f3f",
+    flexDirection: "column",
+    alignItems: "center",
+    borderRadius: 20,
+  },
+  miniCardStyleImg: {
+    width: Dimensions.get("window").width / 4,
+    height: 100,
+    borderRadius: 20,
+  },
+  miniCardStyle: {
+    width: Dimensions.get("window").width / 3,
+    height: Dimensions.get("window").width / 2.3,
+    margin: 10,
+    padding: 10,
     backgroundColor: "#b23f3f",
     flexDirection: "column",
     alignItems: "center",

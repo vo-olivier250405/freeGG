@@ -18,7 +18,11 @@ interface DetailedCardProps {
 export const DetailedCard = (props: DetailedCardProps) => {
   const [detailVisible, setDetailVisible] = useState(false);
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+    >
       <View style={styles.header}>
         <Image
           style={styles.img}
@@ -48,7 +52,11 @@ export const DetailedCard = (props: DetailedCardProps) => {
 
       <UrlButton url={props.game.game_url}>Go to website</UrlButton>
 
-      <ScrollView horizontal={true}>
+      <ScrollView
+        horizontal
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+      >
         {props.game.screenshots.map((link: { id: number; image: string }) => {
           return (
             <Image
@@ -66,7 +74,7 @@ export const DetailedCard = (props: DetailedCardProps) => {
 const styles = StyleSheet.create({
   img: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height / 4,
+    height: Dimensions.get("window").height / 4.5,
     borderRadius: 30,
     margin: 10,
     marginTop: 10,

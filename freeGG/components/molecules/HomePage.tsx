@@ -33,7 +33,7 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
                 onPress={() => navigation.navigate("Details", { id: game.id })}
               >
                 <Text>
-                  <Card game={game} key={index} />
+                  <Card game={game} key={index} isMiniCard={false} />
                 </Text>
               </TouchableOpacity>
             );

@@ -39,4 +39,5 @@ export interface DetailedGame {
 export interface CardProps {
   game: Game;
   key: number;
+  isMiniCard: boolean;
 }
