@@ -12,6 +12,7 @@ import { Carousel } from "../atoms/Carousel";
 
 export const HomePage = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
+
   const [homeGames, setHomeGames] = useState<Game[]>([]);
 
   useEffect(() => {

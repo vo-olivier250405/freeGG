@@ -39,9 +39,21 @@ export const TabNavigator = () => {
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Categories" component={CategoryStack} />
-      <Tab.Screen name="Settings" component={SettingsStack} />
+      <Tab.Screen
+        name="Home"
+        component={HomeStack}
+        initialParams={{ filter: null }}
+      />
+      <Tab.Screen
+        name="Categories"
+        component={CategoryStack}
+        initialParams={{ platform: "all" }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsStack}
+        initialParams={{ filter: null }}
+      />
     </Tab.Navigator>
   );
 };
