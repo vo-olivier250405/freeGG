@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { TabNavigator } from "./components/TabNavigator";
+import { TabNavigator } from "./components/organisms";
 
 export default function App() {
   return (

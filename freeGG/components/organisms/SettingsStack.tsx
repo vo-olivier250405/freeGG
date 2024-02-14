@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { SettingsPage } from "./molecules";
+import { SettingsPage } from "../molecules";
 
 type LoginProps = {
   navigation: any;

@@ -1,9 +1,8 @@
 import React from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { DetailsPage } from "./molecules";
-import { CategoryPage } from "./molecules/CategoryPage";
+import { DetailsPage, CategoryPage, GameSortedByCategory } from "../molecules";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { GameSortedByCategory } from "./molecules/GameSortedByCategory";
 
 const Navigator = createNativeStackNavigator();
 export const CategoryStack = () => {

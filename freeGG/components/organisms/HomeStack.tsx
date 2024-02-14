@@ -1,7 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { DetailsPage } from "./molecules";
-import { HomePage } from "./molecules";
+import { DetailsPage, HomePage } from "../molecules";
 
 const Navigator = createNativeStackNavigator();
 
