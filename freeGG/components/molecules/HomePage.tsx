@@ -1,26 +1,13 @@
-import { useState, useEffect } from "react";
-import {
-  View,
-  ScrollView,
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-} from "react-native";
+import { useState, useEffect, useContext } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import { Game } from "../../interfaces";
 import { fetchSortedData, get10Games } from "../../utils";
 import { Carousel } from "../atoms/Carousel";
+import { GameContext } from "../../context";
 
 export const HomePage = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
-
-  const [homeGames, setHomeGames] = useState<Game[]>([]);
-
-  useEffect(() => {
-    fetchSortedData("alphabetical").then((data) => {
-      // setAllGames(data);
-      setHomeGames(get10Games(data));
-    });
-  }, []);
+  const homeGames = get10Games(useContext(GameContext));
 
   return (
     <View style={styles.container}>
