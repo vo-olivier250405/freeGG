@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Game } from "../../interfaces";
+
 import { fetchSortedData, get10Games } from "../../utils";
 import { Carousel } from "../atoms/Carousel";
 import { GameContext } from "../../context";
 
 export const HomePage = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
-  const homeGames = get10Games(useContext(GameContext));
+  const homeGames = get10Games(useContext(GameContext)!.gamesState);
 
   return (
     <View style={styles.container}>

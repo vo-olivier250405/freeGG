@@ -46,3 +46,8 @@ export interface CarouselProps {
   allGames: Game[];
   navigation: any;
 }
+
+export interface GameContextProps {
+  gamesState: Game[];
+  setGamesState: React.Dispatch<React.SetStateAction<Game[]>>;
+}

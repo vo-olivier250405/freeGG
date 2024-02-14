@@ -1,4 +1,4 @@
 import { createContext } from "react";
-import { Game } from "../interfaces";
+import { GameContextProps } from "../interfaces";
 
-export const GameContext = createContext<Game[]>([]);
+export const GameContext = createContext<GameContextProps | null>(null);

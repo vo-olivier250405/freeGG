@@ -14,8 +14,11 @@ export default function App() {
       setAllGames(data);
     });
   }, []);
+
   return (
-    <GameContext.Provider value={allGames}>
+    <GameContext.Provider
+      value={{ gamesState: allGames, setGamesState: setAllGames }}
+    >
       <NavigationContainer>
         <TabNavigator />
       </NavigationContainer>

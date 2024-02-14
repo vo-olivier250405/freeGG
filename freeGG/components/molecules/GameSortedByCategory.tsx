@@ -9,6 +9,7 @@ import {
 import { Game } from "../../interfaces";
 import { fetchGamesByCategory } from "../../utils";
 import { Card } from "../atoms";
+import { RefreshControl } from "react-native";
 
 interface DetailsPageProps {
   route: any;
@@ -17,8 +18,16 @@ interface DetailsPageProps {
 
 export const GameSortedByCategory = (props: DetailsPageProps) => {
   const { category } = props.route.params;
+  const [refreshing, setRefreshing] = React.useState(false);
   const [sortedGames, setSortedGames] = useState<Game[]>();
   const isMounted = useRef(true);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
 
   useEffect(() => {
     return () => {
@@ -39,6 +48,9 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
   return (
     <ScrollView
       contentContainerStyle={styles.container}
+      refreshControl={
+        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      }
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
     >
