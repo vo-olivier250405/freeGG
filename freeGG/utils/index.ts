@@ -42,11 +42,18 @@ export const fetchDataFromSpecificGame = async (id: number) => {
 };
 
 export const get10Games = (allGames: Game[]): Game[] => {
-  let randomGames: Game[] = [];
-  for (let i = 0; i <= 10; i++) {
-    randomGames.push(allGames[getRandint(0, allGames.length - 1)]);
+  if (allGames.length <= 10) {
+    return allGames;
   }
-  return randomGames;
+
+  const uniqueSet = new Set();
+
+  while (uniqueSet.size < 10) {
+    const randomIndex = Math.floor(Math.random() * allGames.length);
+    uniqueSet.add(allGames[randomIndex]);
+  }
+
+  return Array.from(uniqueSet) as Game[];
 };
 
 export const fetchSortedData = async (

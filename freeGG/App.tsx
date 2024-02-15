@@ -5,6 +5,7 @@ import { TabNavigator } from "./components/organisms";
 import { GameContext } from "./context";
 import { Game } from "./interfaces";
 import { fetchSortedData } from "./utils";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [allGames, setAllGames] = useState<Game[]>([]);
@@ -17,23 +18,16 @@ export default function App() {
 
   return (
     <GameContext.Provider
-      value={{ gamesState: allGames, setGamesState: setAllGames }}
+      value={{
+        gamesState: allGames,
+        setGamesState: setAllGames,
+        copyGames: Array.from(allGames),
+      }}
     >
+      <StatusBar animated={true} backgroundColor="#610101" />
       <NavigationContainer>
         <TabNavigator />
       </NavigationContainer>
     </GameContext.Provider>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
-function setAllGames(data: any) {
-  throw new Error("Function not implemented.");
 }

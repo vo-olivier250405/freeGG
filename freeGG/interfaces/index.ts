@@ -50,4 +50,5 @@ export interface CarouselProps {
 export interface GameContextProps {
   gamesState: Game[];
   setGamesState: React.Dispatch<React.SetStateAction<Game[]>>;
+  copyGames: Game[];
 }

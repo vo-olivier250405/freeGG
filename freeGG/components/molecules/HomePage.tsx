@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import { fetchSortedData, get10Games } from "../../utils";
+import { get10Games } from "../../utils";
 import { Carousel } from "../atoms/Carousel";
 import { GameContext } from "../../context";
 

@@ -28,6 +28,7 @@ export const CategoryPage = ({ navigation }: { navigation: any }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#410303",
+    padding: 50,
   },
   textStyle: {
     padding: 10,
