@@ -40,8 +40,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   cardStyle: {
-    width: Dimensions.get("window").width,
-    margin: 20,
+    width: Dimensions.get("window").width - 20,
     padding: 20,
     backgroundColor: "#b23f3f",
     flexDirection: "column",
