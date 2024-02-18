@@ -3,13 +3,15 @@ import {
   ScrollView,
   TouchableOpacity,
   View,
-  Text,
   StyleSheet,
+  TextInput,
+  Dimensions,
 } from "react-native";
 import { Game } from "../../interfaces";
 import { fetchGamesByCategory } from "../../utils";
 import { Card } from "../atoms";
 import { RefreshControl } from "react-native";
+import { CustomSearchBar } from "../atoms";
 
 interface DetailsPageProps {
   route: any;
@@ -19,8 +21,20 @@ interface DetailsPageProps {
 export const GameSortedByCategory = (props: DetailsPageProps) => {
   const { category } = props.route.params;
   const [refreshing, setRefreshing] = React.useState(false);
-  const [sortedGames, setSortedGames] = useState<Game[]>();
+  const [sortedGames, setSortedGames] = useState<Game[]>([]);
+  const [inputText, setInputText] = useState("");
   const isMounted = useRef(true);
+
+  let temp: Game[] = Array.from(sortedGames!);
+  if (inputText) {
+    temp = sortedGames!.filter((element: Game) => {
+      return element.title.toUpperCase().includes(inputText.toUpperCase());
+    });
+  }
+
+  const handleOnChange = (text: string) => {
+    setInputText(text);
+  };
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -54,9 +68,16 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
     >
-      {sortedGames && (
+      <CustomSearchBar
+        handleOnChange={handleOnChange}
+        inputText={inputText}
+        setInputText={() => setInputText("")}
+        placeholder="Search category"
+      />
+
+      {temp && (
         <View style={styles.columnContainer}>
-          {sortedGames.map((game: Game, index: number) => (
+          {temp.map((game: Game, index: number) => (
             <TouchableOpacity
               key={index}
               onPress={() =>
@@ -79,6 +100,9 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     padding: 10,
     backgroundColor: "#410303",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
   columnContainer: {
     flexDirection: "row",

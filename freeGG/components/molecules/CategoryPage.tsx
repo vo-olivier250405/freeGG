@@ -3,14 +3,11 @@ import {
   Text,
   ScrollView,
   StyleSheet,
-  TextInput,
-  View,
   Dimensions,
 } from "react-native";
 import { useState } from "react";
 import { categories } from "../../utils";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import { CustomSearchBar } from "../atoms";
 
 export const CategoryPage = ({ navigation }: { navigation: any }) => {
   const [inputText, setInputText] = useState("");
@@ -27,21 +24,13 @@ export const CategoryPage = ({ navigation }: { navigation: any }) => {
 
   return (
     <ScrollView style={styles.container}>
-      <View className="flex flex-row m-auto justify-center items-center bg-red-400 rounded-md w-fit">
-        <TextInput
-          value={inputText}
-          onChangeText={handleOnChange}
-          placeholder="Search category"
-          style={styles.textInput}
-          className="text-white"
-        />
-        <TouchableOpacity
-          className="p-2 m-4 border rounded-md border-white"
-          onPress={() => setInputText("")}
-        >
-          <FontAwesomeIcon icon={faX} color="white" size={8} />
-        </TouchableOpacity>
-      </View>
+      <CustomSearchBar
+        handleOnChange={handleOnChange}
+        inputText={inputText}
+        setInputText={() => setInputText("")}
+        placeholder="Search games"
+      />
+
       {temp &&
         temp.map((category: string, index: number) => {
           return (
@@ -73,13 +62,5 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: "#f36e6e",
     borderRadius: 10,
-  },
-  textInput: {
-    padding: 10,
-    margin: "auto",
-    //     backgroundColor: "#e75e5e",
-    borderRadius: 10,
-    marginBottom: 10,
-    width: Dimensions.get("window").width / 2,
   },
 });

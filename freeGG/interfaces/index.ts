@@ -52,3 +52,10 @@ export interface GameContextProps {
   setGamesState: React.Dispatch<React.SetStateAction<Game[]>>;
   copyGames: Game[];
 }
+
+export interface CustomSearchBarProps {
+  handleOnChange: (text: string) => void;
+  setInputText: (value: React.SetStateAction<string>) => void;
+  inputText: string;
+  placeholder: string;
+}
