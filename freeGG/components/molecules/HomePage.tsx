@@ -12,7 +12,7 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>FREE GG</Text>
-      {homeGames && <Carousel allGames={homeGames} navigation={navigation} />}
+      {homeGames && <Carousel data={homeGames} navigation={navigation} />}
     </View>
   );
 };

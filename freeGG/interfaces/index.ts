@@ -42,11 +42,6 @@ export interface CardProps {
   isMiniCard: boolean;
 }
 
-export interface CarouselProps {
-  allGames: Game[];
-  navigation: any;
-}
-
 export interface GameContextProps {
   gamesState: Game[];
   setGamesState: React.Dispatch<React.SetStateAction<Game[]>>;
@@ -58,4 +53,18 @@ export interface CustomSearchBarProps {
   setInputText: (value: React.SetStateAction<string>) => void;
   inputText: string;
   placeholder: string;
+}
+
+export interface ScreenShots {
+  id: number;
+  image: string;
+}
+
+export interface CarouselProps {
+  data: Game[];
+  navigation: any;
+}
+
+export interface PicturesCarouselProps {
+  data: ScreenShots[];
 }

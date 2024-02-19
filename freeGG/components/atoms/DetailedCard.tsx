@@ -6,10 +6,11 @@ import {
   Dimensions,
   StyleSheet,
 } from "react-native";
-import { DetailedGame } from "../../interfaces";
+import { DetailedGame, ScreenShots } from "../../interfaces";
 import { UrlButton } from "./UrlButton";
 import { useState } from "react";
 import { IconPlatform } from "./IconPlatform";
+import { Carousel, PicturesCarousel } from "./Carousel";
 
 interface DetailedCardProps {
   game: DetailedGame;
@@ -52,21 +53,7 @@ export const DetailedCard = (props: DetailedCardProps) => {
 
       <UrlButton url={props.game.game_url}>Go to website</UrlButton>
 
-      <ScrollView
-        horizontal
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-      >
-        {props.game.screenshots.map((link: { id: number; image: string }) => {
-          return (
-            <Image
-              key={link.id}
-              source={{ uri: link.image }}
-              style={styles.img}
-            />
-          );
-        })}
-      </ScrollView>
+      <PicturesCarousel data={props.game.screenshots} />
     </ScrollView>
   );
 };
