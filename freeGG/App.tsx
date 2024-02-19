@@ -11,7 +11,7 @@ export default function App() {
   const [allGames, setAllGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    fetchSortedData("alphabetical").then((data) => {
+    fetchSortedData("popularity").then((data) => {
       setAllGames(data);
     });
   }, []);

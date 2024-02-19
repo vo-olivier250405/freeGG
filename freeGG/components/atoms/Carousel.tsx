@@ -7,7 +7,7 @@ import {
   Image,
 } from "react-native";
 import { CarouselProps, PicturesCarouselProps } from "../../interfaces";
-import { Card } from ".";
+import { Card } from "./Card";
 
 export const Carousel = (props: CarouselProps) => {
   const [index, setIndex] = useState(0);

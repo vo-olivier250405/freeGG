@@ -6,11 +6,11 @@ import {
   Dimensions,
   StyleSheet,
 } from "react-native";
-import { DetailedGame, ScreenShots } from "../../interfaces";
+import { DetailedGame } from "../../interfaces";
 import { UrlButton } from "./UrlButton";
 import { useState } from "react";
 import { IconPlatform } from "./IconPlatform";
-import { Carousel, PicturesCarousel } from "./Carousel";
+import { PicturesCarousel } from "./Carousel";
 
 interface DetailedCardProps {
   game: DetailedGame;
