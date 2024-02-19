@@ -10,7 +10,7 @@ import { DetailedGame } from "../../interfaces";
 import { UrlButton } from "./UrlButton";
 import { useState } from "react";
 import { IconPlatform } from "./IconPlatform";
-import { PicturesCarousel } from "./Carousel";
+import { PicturesCarousel } from "./PIcturesCarousel";
 
 interface DetailedCardProps {
   game: DetailedGame;
