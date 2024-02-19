@@ -11,7 +11,7 @@ import { CustomSearchBarProps } from "../../interfaces";
 
 export const CustomSearchBar = (props: CustomSearchBarProps) => {
   return (
-    <View className="flex flex-row m-auto justify-center items-center bg-red-400 rounded-md w-fit">
+    <View className="flex flex-row m-auto mb-8 justify-center items-center bg-red-400 rounded-md w-fit">
       <TextInput
         value={props.inputText}
         onChangeText={props.handleOnChange}
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     margin: "auto",
     //     backgroundColor: "#e75e5e",
     borderRadius: 10,
-    marginBottom: 20,
     width: Dimensions.get("window").width / 2,
   },
 });

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 
 import { get10Games } from "../../utils";
 import { Carousel } from "../atoms/Carousel";
@@ -11,21 +11,27 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
   const mostPopularGames = useContext(GameContext)!.gamesState.slice(0, 10);
 
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={{
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Text style={styles.textStyle}>FREE GG</Text>
+      <Text className="text-white p-4 italic">Our selection</Text>
       {homeGames && <Carousel data={homeGames} navigation={navigation} />}
+      <Text className="text-white p-4 italic">Most popular</Text>
       {mostPopularGames && (
         <Carousel data={mostPopularGames} navigation={navigation} />
       )}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     backgroundColor: "#410303",
   },
   buttons: {
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 50,
-    padding: 30,
+    padding: 20,
     color: "#f36e6e",
   },
 });
