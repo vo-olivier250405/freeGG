@@ -45,7 +45,6 @@ export interface CardProps {
 export interface GameContextProps {
   gamesState: Game[];
   setGamesState: React.Dispatch<React.SetStateAction<Game[]>>;
-  copyGames: Game[];
 }
 
 export interface CustomSearchBarProps {

@@ -1,12 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import {
-  ScrollView,
-  TouchableOpacity,
-  View,
-  StyleSheet,
-  TextInput,
-  Dimensions,
-} from "react-native";
+import { ScrollView, TouchableOpacity, View, StyleSheet } from "react-native";
 import { Game } from "../../interfaces";
 import { fetchGamesByCategory } from "../../utils";
 import { Card } from "../atoms";

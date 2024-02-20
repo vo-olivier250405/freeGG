@@ -21,7 +21,6 @@ export default function App() {
       value={{
         gamesState: allGames,
         setGamesState: setAllGames,
-        copyGames: Array.from(allGames),
       }}
     >
       <StatusBar animated={true} backgroundColor="#610101" />

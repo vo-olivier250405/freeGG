@@ -22,25 +22,19 @@ export const SettingsPage = () => {
 
   return (
     <View style={styles.container}>
-      <View>
-        <Text onPress={() => console.log(games.length)} className="text-4xl">
-          SETTINGS
-        </Text>
+      {/* <View>
+        <Text className="text-4xl">SETTINGS</Text>
       </View>
 
-      <View>
-        <Text className="italic text-white m-4 text-xl">
-          Click to active filters
-        </Text>
-      </View>
       <View className="flex-column">
-        <View className="flex-row">
-          <CustomButton icon={faGlobe} filterName="PC (Windows)" />
-          <CustomButton icon={faComputer} filterName="Web Browser" />
-        </View>
-        <View className="m-auto">
-          <CustomButton icon={faXmark} filterName="Reset" />
-        </View>
+        <CustomButton icon={faGlobe} filterName="PC (Windows)" />
+        <CustomButton icon={faComputer} filterName="Web Browser" />
+        <CustomButton icon={faXmark} filterName="Reset" />
+      </View> */}
+      <View className="flex-column m-auto">
+        <Text>Vous n'obtiendrez que des jeux sur PC</Text>
+        <Text>Vous n'obtiendrez que des jeux sur Web Browser</Text>
+        <Text>Reset Filters</Text>
       </View>
     </View>
   );
@@ -51,6 +45,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#410303",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
 });

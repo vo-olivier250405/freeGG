@@ -16,10 +16,9 @@ export const CustomButton = (props: CustomButtonProps) => {
   const allGames = useContext(GameContext)?.gamesState!;
   const setAllGames = useContext(GameContext)?.setGamesState!;
 
-  const resetGames = () => {
-    return fetchSortedData("alphabetical").then((data) => {
-      setAllGames(data);
-    });
+  const resetGames = async () => {
+    const data = await fetchSortedData("release-date");
+    setAllGames(data);
   };
 
   return (
