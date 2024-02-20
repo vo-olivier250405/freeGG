@@ -20,7 +20,7 @@ interface DetailsPageProps {
 
 export const GameSortedByCategory = (props: DetailsPageProps) => {
   const { category } = props.route.params;
-  const [refreshing, setRefreshing] = React.useState(false);
+  const [refreshing, setRefreshing] = useState(false);
   const [sortedGames, setSortedGames] = useState<Game[]>([]);
   const [inputText, setInputText] = useState("");
   const isMounted = useRef(true);
@@ -72,7 +72,7 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
         handleOnChange={handleOnChange}
         inputText={inputText}
         setInputText={() => setInputText("")}
-        placeholder="Search category"
+        placeholder="Search game"
       />
 
       {temp && (

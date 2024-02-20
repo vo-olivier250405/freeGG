@@ -15,7 +15,7 @@ export const CustomSearchBar = (props: CustomSearchBarProps) => {
       <TextInput
         value={props.inputText}
         onChangeText={props.handleOnChange}
-        placeholder="Search game"
+        placeholder={props.placeholder}
         style={styles.textInput}
         className="text-white"
       />

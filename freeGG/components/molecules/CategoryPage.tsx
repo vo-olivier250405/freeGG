@@ -28,7 +28,7 @@ export const CategoryPage = ({ navigation }: { navigation: any }) => {
         handleOnChange={handleOnChange}
         inputText={inputText}
         setInputText={() => setInputText("")}
-        placeholder="Search games"
+        placeholder="Search category"
       />
 
       {temp &&
