@@ -1,6 +1,9 @@
 import { View, Text } from "react-native";
 import { CardProps } from "../../interfaces";
 import { Dimensions, Image, StyleSheet } from "react-native";
+import { IconPlatform } from "./IconPlatform";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faComputer, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 export const Card = (props: CardProps) => {
   return (
@@ -18,9 +21,18 @@ export const Card = (props: CardProps) => {
             }
             // resizeMode="contain"
           />
-          <Text style={{ color: "white", padding: 10 }}>
-            {props.game.title}
-          </Text>
+          <View className="flex-row">
+            <Text style={{ color: "white", padding: 10 }}>
+              {props.game.title}
+            </Text>
+            <View className="m-auto">
+              {props.game.platform === "PC (Windows)" ? (
+                <FontAwesomeIcon icon={faComputer} color="white" />
+              ) : (
+                <FontAwesomeIcon icon={faGlobe} color="white" />
+              )}
+            </View>
+          </View>
         </View>
       )}
     </View>

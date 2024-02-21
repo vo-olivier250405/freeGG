@@ -11,6 +11,7 @@ import { CustomButton } from "../atoms";
 import {
   faComputer,
   faGlobe,
+  faX,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { fetchSortedData } from "../../utils";
@@ -32,9 +33,9 @@ export const SettingsPage = () => {
         <CustomButton icon={faXmark} filterName="Reset" />
       </View> */}
       <View className="flex-column m-auto">
-        <Text>Vous n'obtiendrez que des jeux sur PC</Text>
-        <Text>Vous n'obtiendrez que des jeux sur Web Browser</Text>
-        <Text>Reset Filters</Text>
+        <CustomButton icon={faComputer} filterName="PC (Windows)" />
+        <CustomButton icon={faGlobe} filterName="Web Browser" />
+        <CustomButton icon={faX} filterName="All" />
       </View>
     </View>
   );
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#410303",
-    justifyContent: "center",
     alignItems: "flex-start",
   },
 });

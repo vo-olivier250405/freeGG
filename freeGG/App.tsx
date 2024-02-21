@@ -18,10 +18,7 @@ export default function App() {
 
   return (
     <GameContext.Provider
-      value={{
-        gamesState: allGames,
-        setGamesState: setAllGames,
-      }}
+      value={{ gamesState: allGames, setGamesState: setAllGames }}
     >
       <StatusBar animated={true} backgroundColor="#610101" />
       <NavigationContainer>
