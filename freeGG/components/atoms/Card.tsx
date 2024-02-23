@@ -25,13 +25,15 @@ export const Card = (props: CardProps) => {
             <Text style={{ color: "white", padding: 10 }}>
               {props.game.title}
             </Text>
-            <View className="m-auto">
-              {props.game.platform === "PC (Windows)" ? (
-                <FontAwesomeIcon icon={faComputer} color="white" />
-              ) : (
-                <FontAwesomeIcon icon={faGlobe} color="white" />
-              )}
-            </View>
+            {!props.isMiniCard && (
+              <View className="m-auto">
+                {props.game.platform === "PC (Windows)" ? (
+                  <FontAwesomeIcon icon={faComputer} color="white" size={20} />
+                ) : (
+                  <FontAwesomeIcon icon={faGlobe} color="white" size={20} />
+                )}
+              </View>
+            )}
           </View>
         </View>
       )}

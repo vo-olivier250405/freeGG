@@ -55,9 +55,9 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
   return (
     <ScrollView
       contentContainerStyle={styles.container}
-      refreshControl={
-        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      }
+      // refreshControl={
+      //   <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+      // }
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
     >
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     padding: 10,
     backgroundColor: "#410303",
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
