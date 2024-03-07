@@ -59,10 +59,10 @@ export const PicturesCarousel = (props: PicturesCarouselProps) => {
               style={{
                 width: Dimensions.get("window").width - 10,
                 height: Dimensions.get("window").height / 4.5,
-                borderRadius: 30,
+                borderRadius: 10,
                 marginTop: 10,
-                borderColor: "#b23f3f",
-                borderWidth: 10,
+                borderWidth: 3,
+                borderColor: "white",
               }}
             />
           </TouchableOpacity>
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     top: 20,
     right: 20,
     padding: 10,
-    backgroundColor: "#b23f3f",
+    backgroundColor: "red",
     borderRadius: 10,
   },
 });

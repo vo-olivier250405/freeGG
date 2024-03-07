@@ -54,19 +54,19 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
   }, [category]);
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.container}
-      // refreshControl={
-      //   <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-      // }
-      showsVerticalScrollIndicator={false}
-      showsHorizontalScrollIndicator={false}
+    <LinearGradient
+      colors={["#000000", "#151313", "#474646"]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
     >
-      <LinearGradient
-        colors={["#000000", "#151313", "#474646"]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      <ScrollView
+        contentContainerStyle={styles.container}
+        // refreshControl={
+        //   <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        // }
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       >
         <CustomSearchBar
           handleOnChange={handleOnChange}
@@ -90,8 +90,8 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
             ))}
           </View>
         )}
-      </LinearGradient>
-    </ScrollView>
+      </ScrollView>
+    </LinearGradient>
   );
 };
 
@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     padding: 10,
-    backgroundColor: "#410303",
     justifyContent: "center",
     alignItems: "center",
   },

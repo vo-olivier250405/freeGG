@@ -20,7 +20,7 @@ export default function App() {
     <GameContext.Provider
       value={{ gamesState: allGames, setGamesState: setAllGames }}
     >
-      <StatusBar animated={true} backgroundColor="#610101" />
+      <StatusBar animated={true} backgroundColor="white" />
       <NavigationContainer>
         <TabNavigator />
       </NavigationContainer>
