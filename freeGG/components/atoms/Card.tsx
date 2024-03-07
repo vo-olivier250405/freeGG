@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   cardStyle: {
     width: Dimensions.get("window").width - 20,
     padding: 20,
-    backgroundColor: "#b23f3f",
+
     flexDirection: "column",
     alignItems: "center",
     borderRadius: 20,

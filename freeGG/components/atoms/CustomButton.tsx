@@ -38,8 +38,8 @@ export const CustomButton = (props: CustomButtonProps) => {
       }}
       className={
         isFocused && props.filterName !== "All"
-          ? "p-4 bg-red-500 rounded-md rounded-1 m-8 justify-center items-center"
-          : "p-4 bg-red-900 rounded-md rounded-1 m-8 justify-center items-center"
+          ? "p-4 bg-gray-500 rounded-md rounded-1 m-8 justify-center items-center"
+          : "p-4 bg-gray-100 rounded-md rounded-1 m-8 justify-center items-center"
       }
     >
       <FontAwesomeIcon

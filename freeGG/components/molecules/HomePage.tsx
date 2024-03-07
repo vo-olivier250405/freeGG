@@ -1,5 +1,12 @@
 import { useContext } from "react";
-import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  Image,
+} from "react-native";
 
 import { get10Games } from "../../utils";
 import { Carousel } from "../atoms/Carousel";
@@ -23,9 +30,25 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
         colors={["#000000", "#151313", "#474646"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: 30,
+        }}
       >
-        <Text style={styles.textStyle}>FREE GG</Text>
+        <Image
+          source={{
+            uri: "https://www.freetogame.com/assets/images/freetogame-logo.png",
+          }}
+          style={{
+            width: Dimensions.get("window").width - 10,
+            height: Dimensions.get("window").height / 4,
+            borderRadius: 10,
+            marginTop: 10,
+          }}
+          resizeMode="contain"
+        />
         <Text className="text-white p-4 italic">Our selection</Text>
         {homeGames && <Carousel data={homeGames} navigation={navigation} />}
         <Text className="text-white p-4 italic">Most popular</Text>
@@ -53,6 +76,7 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 50,
     padding: 20,
-    color: "#f36e6e",
+    color: "white",
+    marginTop: 50,
   },
 });
