@@ -4,6 +4,7 @@ import { Game } from "../../interfaces";
 import { fetchGamesByCategory } from "../../utils";
 import { Card } from "../atoms";
 import { RefreshControl } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { CustomSearchBar } from "../atoms";
 
 interface DetailsPageProps {
@@ -61,28 +62,35 @@ export const GameSortedByCategory = (props: DetailsPageProps) => {
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
     >
-      <CustomSearchBar
-        handleOnChange={handleOnChange}
-        inputText={inputText}
-        setInputText={() => setInputText("")}
-        placeholder="Search game"
-      />
+      <LinearGradient
+        colors={["#000000", "#151313", "#474646"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      >
+        <CustomSearchBar
+          handleOnChange={handleOnChange}
+          inputText={inputText}
+          setInputText={() => setInputText("")}
+          placeholder="Search game"
+        />
 
-      {temp && (
-        <View style={styles.columnContainer}>
-          {temp.map((game: Game, index: number) => (
-            <TouchableOpacity
-              key={index}
-              onPress={() =>
-                props.navigation.navigate("Details", { id: game.id })
-              }
-              style={styles.card}
-            >
-              <Card game={game} key={index} isMiniCard={true} />
-            </TouchableOpacity>
-          ))}
-        </View>
-      )}
+        {temp && (
+          <View style={styles.columnContainer}>
+            {temp.map((game: Game, index: number) => (
+              <TouchableOpacity
+                key={index}
+                onPress={() =>
+                  props.navigation.navigate("Details", { id: game.id })
+                }
+                style={styles.card}
+              >
+                <Card game={game} key={index} isMiniCard={true} />
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
+      </LinearGradient>
     </ScrollView>
   );
 };

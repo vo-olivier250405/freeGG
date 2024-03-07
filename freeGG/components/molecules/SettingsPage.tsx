@@ -16,14 +16,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { fetchSortedData } from "../../utils";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const SettingsPage = () => {
   const setGames = useContext(GameContext)?.setGamesState!;
   const games = useContext(GameContext)?.gamesState!;
 
   return (
-    <View style={styles.container}>
-      {/* <View>
+    <LinearGradient
+      colors={["#000000", "#151313", "#474646"]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+    >
+      <View style={styles.container}>
+        {/* <View>
         <Text className="text-4xl">SETTINGS</Text>
       </View>
 
@@ -32,19 +39,19 @@ export const SettingsPage = () => {
         <CustomButton icon={faComputer} filterName="Web Browser" />
         <CustomButton icon={faXmark} filterName="Reset" />
       </View> */}
-      <View className="flex-column m-auto">
-        <CustomButton icon={faComputer} filterName="PC (Windows)" />
-        <CustomButton icon={faGlobe} filterName="Web Browser" />
-        <CustomButton icon={faX} filterName="All" />
+        <View className="flex-column m-auto">
+          <CustomButton icon={faComputer} filterName="PC (Windows)" />
+          <CustomButton icon={faGlobe} filterName="Web Browser" />
+          <CustomButton icon={faX} filterName="All" />
+        </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#410303",
     alignItems: "flex-start",
   },
 });

@@ -37,6 +37,9 @@ export const TabNavigator = () => {
           backgroundColor: "#610101",
           shadowColor: "#f36e6e",
         },
+        tabBarOptions: {
+          keyboardHidesTabBar: true,
+        },
       })}
     >
       <Tab.Screen

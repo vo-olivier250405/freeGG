@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { get10Games } from "../../utils";
 import { Carousel } from "../atoms/Carousel";
 import { GameContext } from "../../context";
+import { LinearGradient } from "expo-linear-gradient";
 
 export const HomePage = ({ navigation }: { navigation: any }) => {
   // const [allGames, setAllGames] = useState<Game[]>([]);
@@ -18,13 +19,20 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
         justifyContent: "center",
       }}
     >
-      <Text style={styles.textStyle}>FREE GG</Text>
-      <Text className="text-white p-4 italic">Our selection</Text>
-      {homeGames && <Carousel data={homeGames} navigation={navigation} />}
-      <Text className="text-white p-4 italic">Most popular</Text>
-      {mostPopularGames && (
-        <Carousel data={mostPopularGames} navigation={navigation} />
-      )}
+      <LinearGradient
+        colors={["#000000", "#151313", "#474646"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+      >
+        <Text style={styles.textStyle}>FREE GG</Text>
+        <Text className="text-white p-4 italic">Our selection</Text>
+        {homeGames && <Carousel data={homeGames} navigation={navigation} />}
+        <Text className="text-white p-4 italic">Most popular</Text>
+        {mostPopularGames && (
+          <Carousel data={mostPopularGames} navigation={navigation} />
+        )}
+      </LinearGradient>
     </ScrollView>
   );
 };
