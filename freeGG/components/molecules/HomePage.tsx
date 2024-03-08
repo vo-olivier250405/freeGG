@@ -63,7 +63,7 @@ export const HomePage = ({ navigation }: { navigation: any }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#410303",
+    backgroundColor: "black",
   },
   buttons: {
     padding: 5,

@@ -27,8 +27,8 @@ export const TabNavigator = () => {
           // You can return any component that you like here!
           return <FontAwesomeIcon icon={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "red",
-        tabBarInactiveTintColor: "white",
+        tabBarActiveTintColor: "#0080F8",
+        tabBarInactiveTintColor: "#A0B4C7",
         tabBarStyle: {
           borderColor: "black",
           borderTopLeftRadius: 20,

@@ -37,31 +37,13 @@ export const DetailedCard = (props: DetailedCardProps) => {
             source={{ uri: props.game.thumbnail }}
             resizeMode="contain"
           />
-          <Text style={{ color: "#f36e6e" }}>{props.game.title}</Text>
-          <Text style={{ color: "#f36e6e", fontStyle: "italic" }}>
+          <Text style={{ color: "#0080F8" }}>{props.game.title}</Text>
+          <Text style={{ color: "#0080F8", fontStyle: "italic" }}>
             {props.game.developer}
           </Text>
           <IconPlatform platform={props.game.platform} />
         </View>
         <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <View style={{ margin: "auto" }}>
-            <Text style={{ color: "white" }}>
-              {"OS: " + props.game.minimum_system_requirements?.os}
-            </Text>
-            <Text style={{ color: "white" }}>
-              {"Processor: " +
-                props.game.minimum_system_requirements?.processor}
-            </Text>
-            <Text style={{ color: "white" }}>
-              {"Memory: " + props.game.minimum_system_requirements?.memory}
-            </Text>
-            <Text style={{ color: "white" }}>
-              {"Graphics: " + props.game.minimum_system_requirements?.graphics}
-            </Text>
-            <Text style={{ color: "white" }}>
-              {"Storage: " + props.game.minimum_system_requirements?.storage}
-            </Text>
-          </View>
           {!detailVisible ? (
             <Text
               style={styles.description}
@@ -82,6 +64,36 @@ export const DetailedCard = (props: DetailedCardProps) => {
         </View>
 
         <PicturesCarousel data={props.game.screenshots} />
+        {props.game.minimum_system_requirements && (
+          <View
+            style={{
+              margin: 50,
+              justifyContent: "center",
+              alignItems: "flex-start",
+            }}
+          >
+            <Text style={{ color: "white" }}>
+              <Text style={styles.text}>OS: </Text>
+              {props.game.minimum_system_requirements?.os}
+            </Text>
+            <Text style={{ color: "white" }}>
+              <Text style={styles.text}>Processor: </Text>
+              {props.game.minimum_system_requirements?.processor}
+            </Text>
+            <Text style={{ color: "white" }}>
+              <Text style={styles.text}>Memory: </Text>
+              {props.game.minimum_system_requirements?.memory}
+            </Text>
+            <Text style={{ color: "white" }}>
+              <Text style={styles.text}>Graphics: </Text>
+              {props.game.minimum_system_requirements?.graphics}
+            </Text>
+            <Text style={{ color: "white" }}>
+              <Text style={styles.text}>Storage: </Text>
+              {props.game.minimum_system_requirements?.storage}
+            </Text>
+          </View>
+        )}
       </ScrollView>
     </LinearGradient>
   );
@@ -103,15 +115,19 @@ const styles = StyleSheet.create({
   container: {
     padding: 5,
     paddingTop: 50,
+    marginBottom: Dimensions.get("window").height / 10,
     color: "#f36e6e",
     height: Dimensions.get("window").height,
   },
   description: {
-    color: "white",
+    color: "black",
     fontStyle: "italic",
-    backgroundColor: "#F83F3E",
+    backgroundColor: "#A0B4C7",
     padding: 10,
     borderRadius: 10,
     margin: 10,
+  },
+  text: {
+    color: "#0080F8",
   },
 });

@@ -11,6 +11,7 @@ import {
 import { PicturesCarouselProps } from "../../interfaces";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import DownloadImage from "./DownloadImage";
 
 export const PicturesCarousel = (props: PicturesCarouselProps) => {
   const [index, setIndex] = useState(0);
@@ -72,9 +73,8 @@ export const PicturesCarousel = (props: PicturesCarouselProps) => {
             onRequestClose={() => setModalVisible(false)}
           >
             <View style={styles.modalContainer}>
-              <Image
-                source={{ uri: props.data[selectedImageIndex].image }}
-                style={styles.modalImage}
+              <DownloadImage
+                imageUrl={{ uri: props.data[selectedImageIndex].image }}
               />
 
               <TouchableOpacity
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     top: 20,
     right: 20,
     padding: 10,
-    backgroundColor: "red",
+    backgroundColor: "#0080F8",
     borderRadius: 10,
   },
 });

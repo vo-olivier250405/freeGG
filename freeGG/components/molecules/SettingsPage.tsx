@@ -30,15 +30,7 @@ export const SettingsPage = () => {
       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
     >
       <View style={styles.container}>
-        {/* <View>
-        <Text className="text-4xl">SETTINGS</Text>
-      </View>
-
-      <View className="flex-column">
-        <CustomButton icon={faGlobe} filterName="PC (Windows)" />
-        <CustomButton icon={faComputer} filterName="Web Browser" />
-        <CustomButton icon={faXmark} filterName="Reset" />
-      </View> */}
+        <Text className="text-white">Choose your settings</Text>
         <View className="flex-column m-auto">
           <CustomButton icon={faComputer} filterName="PC (Windows)" />
           <CustomButton icon={faGlobe} filterName="Web Browser" />

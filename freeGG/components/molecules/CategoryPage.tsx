@@ -63,6 +63,7 @@ export const CategoryPage = ({ navigation }: { navigation: any }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 50,
+    marginBottom: Dimensions.get("window").height / 10,
   },
   textStyle: {
     padding: 10,

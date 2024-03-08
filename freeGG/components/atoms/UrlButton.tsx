@@ -23,8 +23,8 @@ export const UrlButton = (props: OpenURLButtonProps) => {
       style={{
         padding: 15,
         margin: 15,
-        backgroundColor: "#f36e6e",
-        width: props.children.length * 8,
+        backgroundColor: "#0080F8",
+        width: "auto",
         borderRadius: 10,
       }}
     >
