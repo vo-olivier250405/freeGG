@@ -22,7 +22,12 @@ export const Card = (props: CardProps) => {
             // resizeMode="contain"
           />
           <View className="flex-row">
-            <Text style={{ color: "white", padding: 10 }}>
+            <Text
+              style={{
+                color: props.isMiniCard ? "black" : "white",
+                padding: 10,
+              }}
+            >
               {props.game.title}
             </Text>
             {!props.isMiniCard && (
