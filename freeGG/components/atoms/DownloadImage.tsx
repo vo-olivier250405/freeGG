@@ -66,6 +66,7 @@ export default function DownloadImage({
           justifyContent: "center",
           alignItems: "center",
           borderRadius: 10,
+          marginTop: 20,
         }}
       >
         <TouchableOpacity style={{ margin: 20 }} onPress={handleDownload}>
